@@ -4,7 +4,7 @@ memory: 8192
 
 containers:
   - name: "waddle"
-    image: "ghcr.io/nchapman/waddle@sha256:bdc8582c192d23dd45fa4a489ad2a132ba1eada0848cbd0e2abf20e04f974381"
+    image: "ghcr.io/nchapman/waddle@sha256:e75b800489b89316e2875d66eeac7d7f366bef3cb4a4ae5479cbcbf958bda7ac"
     env:
       - PORT: "8080"
       - NODE_ENV: "production"
