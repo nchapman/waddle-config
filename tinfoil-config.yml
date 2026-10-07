@@ -1,0 +1,15 @@
+cvm-version: 0.14.7
+cpus: 2
+memory: 8192
+
+containers:
+  - name: "waddle"
+    image: "ghcr.io/nchapman/waddle@sha256:PLACEHOLDER_DIGEST"
+    env:
+      - PORT: "8080"
+      - NODE_ENV: "production"
+
+shim:
+  upstream-port: 8080
+  paths:
+    - /*
