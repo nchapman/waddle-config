@@ -4,10 +4,15 @@ memory: 8192
 
 containers:
   - name: "waddle"
-    image: "ghcr.io/nchapman/waddle@sha256:ef4256537e0a14d337e6f8ae7a87ff6e27cea3ce0df20d5ceb52286398e07d50"
+    image: "ghcr.io/nchapman/waddle@sha256:4637849991806517dfa00cee90f5c7de923936d8ca7d0b00ef94eda591629a05"
+    networks: [outbound]
     env:
       - PORT: "8080"
       - NODE_ENV: "production"
+
+networks:
+  outbound:
+    egress: open   # the agent needs the real web — honest limit, per plan
 
 shim:
   upstream-port: 8080
