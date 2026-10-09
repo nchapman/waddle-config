@@ -4,14 +4,14 @@ memory: 8192
 
 containers:
   - name: "waddle"
-    image: "ghcr.io/nchapman/waddle@sha256:4a4e8c36d4e62215f6f673702032ad9d62322bd80240ddc05a3f6f4fdc8a1aa6"
+    image: "ghcr.io/nchapman/waddle@sha256:7e230fe71fa3fa2ccdab6daecfd6cbcb29deff62fe06407f8b0dfe723b6c03e4
     networks: [outbound]
     env:
       - PORT: "8080"
       - NODE_ENV: "production"
       - CONCIERGE_URL: "https://waddle-concierge.ddg-waddle.containers.tinfoil.dev"
       - WADDLE_INSTANCE: "waddle"
-      - WADDLE_WAKE_AUTONOMY: "0"   # unattended autonomy is parked — fresh volume per deploy needs the escrow design first
+      - WADDLE_WAKE_AUTONOMY: "1"   # on: sleep gate covers dues via wake rows; credential is CVM-local only (fresh volume per deploy = wake-boots stay user-in-loop)
     secrets:
       - CONCIERGE_SHARED_SECRET
 
