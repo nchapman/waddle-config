@@ -15,6 +15,7 @@ containers:
       - WADDLE_IDLE_MS: "600000"
     secrets:
       - CONCIERGE_SHARED_SECRET
+      - TINFOIL_API_KEY
 
 networks:
   outbound:
